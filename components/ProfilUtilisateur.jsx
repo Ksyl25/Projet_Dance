@@ -4,7 +4,7 @@ const UserProfile = () => {
   // TODO Informations de base dans l'objet profil
   const [profile, setProfile] = useState({
     nom: 'John Doe',
-    prenom: 'John Doe',
+    prenom: 'Stephant',
     creation: '01/02/2023',
     email: 'john.doe@example.com',
     nb_entree: '5',
@@ -37,7 +37,7 @@ const UserProfile = () => {
         {isEditing ? (
           <input
             type="text"
-            name="Nom"
+            name="nom"
             value={profile.nom}
             onChange={handleChange}
             style={styles.input}
@@ -47,11 +47,11 @@ const UserProfile = () => {
         )}
       </div>
       <div style={styles.field}>
-        <label>Prenom:</label>
+        <label>Prénom :</label>
         {isEditing ? (
           <input
             type="text"
-            name="Prenom"
+            name="prenom"
             value={profile.prenom}
             onChange={handleChange}
             style={styles.input}
