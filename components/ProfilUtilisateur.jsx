@@ -93,33 +93,52 @@ const UserProfile = () => {
     </div>
   );
 };
-
 const styles = {
   container: {
     maxWidth: '600px',
     margin: '0 auto',
     padding: '20px',
-    border: '1px solid #ddd',
     borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    marginTop: '5%',
-    backgroundColor : 'purple' ,
+    backgroundColor: 'purple',
+    color: 'white',
+    fontFamily: 'Arial, sans-serif',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    marginTop : '2.5%',
   },
   field: {
-    marginBottom: '5px',
+    marginBottom: '20px',
+  },
+  label: {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    marginBottom: '8px',
   },
   input: {
     width: '100%',
-    padding: '8px',
+    padding: '10px',
     fontSize: '16px',
-    marginBottom: '8px',
+    marginBottom: '12px',
+    borderRadius: '4px',
+    border: 'none',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    color: 'purple',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
   },
   textarea: {
     width: '100%',
-    padding: '8px',
+    padding: '10px',
     fontSize: '16px',
     height: '80px',
-    marginBottom: '8px',
+    marginBottom: '12px',
+    borderRadius: '4px',
+    border: 'none',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    color: 'purple',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   babyContainer: {
     display: 'flex',
@@ -127,12 +146,16 @@ const styles = {
     marginBottom: '10px',
   },
   button: {
-    padding: '10px 20px',
+    padding: '12px 24px',
     fontSize: '16px',
     cursor: 'pointer',
-    marginRight: '8px',
+    backgroundColor: 'magenta',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+    marginRight: '38px',
   },
-  
 };
 
 export default UserProfile;
