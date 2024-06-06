@@ -15,10 +15,12 @@ import Link from "next/link";
 export default profil*/
 
 import Navbar from "../../Components/NavBar";
+import UserProfile from "../../Components/ProfilUtilisateur";
 function App() {
 	return (
 		<React.Fragment>
 			<Navbar/>
+            <UserProfile/>
 		</React.Fragment>
 	);
 }

@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { HiAdjustmentsHorizontal } from "react-icons/hi2";
+import { SlMagnifier } from "react-icons/sl";
+
+
 import "../app/globals.css";
+import Categorie from "./Categorie";
+import SearchBar from "./SearchBar"
 
 function Navbar() {
 	const navRef = useRef();
@@ -14,15 +20,22 @@ function Navbar() {
 			"responsive_nav"
 		);
 	};
+  const handleSearch = (query) => {
+    console.log('Search query:', query);
+    // Proposé des résultats ici
+  };
 
 	return (
 		<header>
 			<h3>LOGO</h3>
 			<nav ref={navRef}>
-				<a href="/#">Home</a>
-				<a href="/#">My work</a>
-				<a href="/#">Blog</a>
-				<a href="/#">About me</a>
+				<Categorie nom ="Profil" />
+				<a href="/#">Mes Cours</a>
+				<a href="/#">Finances</a>
+				<a href="/#">Boutique</a>
+      
+        <SearchBar onSearch={handleSearch} />
+        
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
