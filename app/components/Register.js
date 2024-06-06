@@ -1,15 +1,12 @@
-"Use client"
 import React from 'react';
-import "./r.css";
-import "./register.css";
-
-
+import styles from '../styles/r.css';
+import styles from '../styles/register.css';
 
 const Register = () => {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div className="register-container">
       <h2>Veuillez entrer vos informations</h2>
-      <form>
+      <form className="register-form">
         <div>
           <label>
             Nom:

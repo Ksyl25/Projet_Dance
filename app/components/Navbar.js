@@ -1,20 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import Logo from "../Assets/Logo.svg";
-import { useHistory } from 'react-router-dom';
-import "./r.css";
-import "./login.css";
-import "./register.css";
+import { useRouter } from 'next/router';
+import Logo from '../public/assets/Logo.svg';
+import styles from '../styles/r.css';
+import styles from '../styles/login.css';
+import styles from '../styles/register.css';
 
 const Navbar = () => {
-  const history = useHistory();
+  const router = useRouter();
 
   const goToLogin = () => {
-    history.push('/login');
+    router.push('/login');
   };
 
   const goToRegister = () => {
-    history.push('/register');
+    router.push('/register');
   };
 
   return (

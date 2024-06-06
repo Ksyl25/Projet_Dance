@@ -1,27 +1,21 @@
 import React from "react";
-import { useHistory } from "react-router-dom"; // Importez useHistory si vous utilisez React Router pour la navigation
-import AboutBackground from "../Assets/2422169-jeune-fille-danse-danse-moderne-danseuse-en-pose-gracieuse-personnage-femme-en-dessin-style-illustrationle-isoler-vectoriel.jpg";
-import AboutBackgroundImage from "../Assets/2422169-jeune-fille-danse-danse-moderne-danseuse-en-pose-gracieuse-personnage-femme-en-dessin-style-illustrationle-isoler-vectoriel.jpg";
+import { useRouter } from 'next/router';
+import AboutBackground from '../public/assets/AboutBackground.jpg';
+import AboutBackgroundImage from '../public/assets/AboutBackgroundImage.jpg';
 import { BsFillPlayCircleFill } from "react-icons/bs";
-import "./r.css";
-import "./login.css";
-import "./register.css";
+import styles from '../styles/r.css';
+import styles from '../styles/login.css';
+import styles from '../styles/register.css';
 
 const About = () => {
-  const history = useHistory(); // Initialisez useHistory pour la navigation
+  const router = useRouter();
 
-  // Fonction pour gérer le clic sur le bouton "Apprendre plus"
   const handleLearnMoreClick = () => {
-    // Ici, vous pouvez rediriger l'utilisateur vers la page appropriée
-    // Par exemple :
-    history.push("/learn-more"); // Redirigez l'utilisateur vers la page d'informations supplémentaires
+    router.push("/learn-more");
   };
 
-  // Fonction pour gérer le clic sur le bouton "Regarder vidéo"
   const handleWatchVideoClick = () => {
-    // Ici, vous pouvez ouvrir une modale vidéo ou rediriger l'utilisateur vers une page vidéo
-    // Par exemple :
-    history.push("/watch-video"); // Redirigez l'utilisateur vers la page de lecture vidéo
+    router.push("/watch-video");
   };
 
   return (
@@ -44,7 +38,6 @@ const About = () => {
           AVEC DES PROFESSEURS TALENTUEUX ET DEVOUES POUR VOUS APPRENDRE A DANSER
         </p>
         <div className="about-buttons-container">
-          {/* Ajoutez des gestionnaires d'événements aux boutons */}
           <button className="secondary-button" onClick={handleLearnMoreClick}>NOS COURS</button>
           <button className="watch-video-button" onClick={handleWatchVideoClick}>
             <BsFillPlayCircleFill /> Regarder Video

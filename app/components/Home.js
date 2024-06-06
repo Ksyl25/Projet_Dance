@@ -1,21 +1,20 @@
-"Use client"
 import React, { useState } from "react";
-import BannerBackground from "../../public/Assets/young-girl-dancing-modern-dance-dancer-in-graceful-pose-female-character-in-cartoon-style-illustration-isolate-vector (1).jpg";
-import BannerImage from "../../public/Assets/young-girl-dancing-modern-dance-dancer-in-graceful-pose-female-character-in-cartoon-style-illustration-isolate-vector (1).jpg";
+import BannerBackground from '../public/assets/BannerBackground.jpg';
+import BannerImage from '../public/assets/BannerImage.jpg';
 import { FiArrowRight } from "react-icons/fi";
-import { useHistory } from 'react-router-dom'; // Import useHistory
-import "./r.css";
-import "./login.css";
-import "./register.css";
-import Register from "../register";
+import { useRouter } from 'next/router';
+import styles from '../styles/r.css';
+import styles from '../styles/login.css';
+import styles from '../styles/register.css';
+import Register from "./Register";
 
 const Home = () => {
-  const history = useHistory(); // Initialize useHistory
+  const router = useRouter();
   const [showRegister, setShowRegister] = useState(false);
 
   const handleRegisterClick = () => {
     setShowRegister(true);
-    history.push('/register'); // Navigate to Register page
+    router.push('/register');
   };
 
   return (
