@@ -9,16 +9,15 @@ import { BsFillPlayCircleFill } from 'react-icons/bs';
 import "../CSS/r.css";
 import "../login/login.css";
 import "../register/register.css";
+import "../courses/Courses";
 
 const About = () => {
   const router = useRouter(); // Initialisez useRouter pour la navigation
 
-  // Fonction pour gérer le clic sur le bouton "Apprendre plus"
+  // Fonction pour gérer le clic sur le bouton "NOS COURS"
   const handleLearnMoreClick = () => {
-    // Redirigez l'utilisateur vers la page d'informations supplémentaires
-    
-
-    router.push('/learn-more');
+    // Redirigez l'utilisateur vers la page des cours
+    router.push('/courses');
   };
 
   // Fonction pour gérer le clic sur le bouton "Regarder vidéo"
