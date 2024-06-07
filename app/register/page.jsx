@@ -1,12 +1,14 @@
+// app/register/page.jsx
+"use client";
 import React from 'react';
-import styles from '../styles/r.css';
-import styles from '../styles/register.css';
+import "../register/register.css";
+import "../CSS/r.css";
 
 const Register = () => {
   return (
-    <div className="register-container">
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h2>Veuillez entrer vos informations</h2>
-      <form className="register-form">
+      <form>
         <div>
           <label>
             Nom:

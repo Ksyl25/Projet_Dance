@@ -1,12 +1,13 @@
+"use client";
+
 import React from 'react';
-import styles from '../styles/r.css';
-import styles from '../styles/login.css';
+
 
 const Login = () => {
   return (
-    <div className="login-container">
+    <div style={{ textAlign: 'center', marginTop: '50px'}}>
       <h2>Veuillez entrer vos identifiants</h2>
-      <form className="login-form">
+      <form>
         <div>
           <label>
             Nom:

@@ -1,7 +1,20 @@
-import Image from "next/image";
+// pages/index.js
 
-export default function Home() {
+import Navbar from "./navbar/page"
+import Home from "./home/page";
+import About from "./about/page";
+import Work from "./work/page";
+import Testimonial from "./testimonial/page";
+
+
+export default function Index() {
   return (
-    <div>Projet Dance </div>
+    <div className="App">
+      <Navbar />
+      <Home />
+      <About />
+      <Work />
+      <Testimonial />
+    </div>
   );
 }
