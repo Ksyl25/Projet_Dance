@@ -13,16 +13,16 @@ function Categorie({nom}) {
 		  lien = "../profil"
 		  break;
 		case 'Mes Cours':
-			lien = "../Cours"
+			lien = "../cours"
 			break;
-		case 'Finances':
-		  lien = "../Finances"
+		case 'Creation':
+		  lien = "../creation"
 		  break;
 		  case 'Boutique':
-			lien = "../Boutique"
+			lien = "../shop"
 			break;
 		default:
-			lien = "#"
+			lien = "../test"
 			break;
 	  }
 	return (

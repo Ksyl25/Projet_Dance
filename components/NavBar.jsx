@@ -30,9 +30,9 @@ function Navbar() {
 			<h3>LOGO</h3>
 			<nav ref={navRef}>
 				<Categorie nom ="Profil" />
-				<a href="/#">Mes Cours</a>
-				<a href="/#">Finances</a>
-				<a href="/#">Boutique</a>
+				<Categorie nom ="Creation" />
+				<Categorie nom ="Boutique" />
+				<Categorie nom ="autre" />
       
         <SearchBar onSearch={handleSearch} />
         
