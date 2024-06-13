@@ -1,4 +1,10 @@
+
 // pages/index.js
+"use client"
+
+import Image from "next/image";
+import React from "react";
+import Link from "next/link";
 
 import Navbar from "./navbar/page"
 import Home from "./home/page";
@@ -16,5 +22,19 @@ export default function Index() {
       <Work />
       <Testimonial />
     </div>
-  );
+
+
+
+
+
+import Navbar from "../Components/NavBar";
+function App() {
+	return (
+		<React.Fragment>
+			<Navbar/>
+      <div>Projet Dance </div>
+		</React.Fragment>
+	);
 }
+
+export default App;

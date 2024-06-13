@@ -1,0 +1,40 @@
+.event-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F39C12; /* Orange */
+    border-radius: 8px;
+    margin-top: 3% ;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #6C3483; /* Purple */
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #6C3483; /* Purple */
+    border-radius: 4px;
+  }
+  
+  .form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6C3483; /* Purple */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-button:hover {
+    background-color: #7D3C98; /* Darker Purple */
+  }
+  
