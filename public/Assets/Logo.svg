@@ -1,0 +1,16 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rectangle for context -->
+  <rect width="300" height="100" fill="#F0F0F0"/>
+  
+  <!-- Circle for graphical element (like a sun or spotlight) -->
+  <circle cx="50" cy="50" r="40" fill="#FE9E0D" />
+
+  <!-- Stylized dancer silhouette -->
+  <path d="M45,35 C50,10 70,10 75,35 C80,60 60,60 65,75 C70,90 50,90 55,75 C60,60 40,60 45,35 Z" fill="#FFFFFF"/>
+  
+  <!-- Text for the logo name -->
+  <text x="100" y="55" font-family="Arial" font-size="29" fill="#FE9E0D" font-weight="bold">BIAMA DANSE</text>
+  
+  <!-- Tagline for the association -->
+  <text x="100" y="75" font-family="Arial" font-size="21" fill="#FE9E0D">Association de danse</text>
+</svg>
