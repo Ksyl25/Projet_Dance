@@ -13,7 +13,7 @@ import Work from "./work/page";
 import Testimonial from "./testimonial/page";
 
 
-export default function Index() {
+function Index() {
   return (
     <div className="App">
       <Navbar />
@@ -21,20 +21,8 @@ export default function Index() {
       <About />
       <Work />
       <Testimonial />
-    </div>
+    </div> )
+	}
 
 
-
-
-
-import Navbar from "../Components/NavBar";
-function App() {
-	return (
-		<React.Fragment>
-			<Navbar/>
-      <div>Projet Dance </div>
-		</React.Fragment>
-	);
-}
-
-export default App;
+export default Index;

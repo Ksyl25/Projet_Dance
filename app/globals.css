@@ -331,7 +331,6 @@ nav {
     margin-top: 1rem !important;
   }
 
-<<<<<<< benjo
   .App {
     max-width: 95vw;
   }
@@ -341,15 +340,15 @@ nav {
   .about-background-image-container {
     display: none;
   }
-=======
-  @layer base {
+}
+  /*@layer base {  erreur is used but no matching `@tailwind base` directive is present.
     * {
       @apply border-border;
     }
     body {
       @apply bg-background text-foreground;
     }
-  }
+  }*/
 
   @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
@@ -451,5 +450,4 @@ nav {
   background-color: white;
   min-width: 200px;
 
->>>>>>> main
 }
