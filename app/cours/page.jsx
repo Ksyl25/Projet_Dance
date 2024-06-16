@@ -1,56 +1,68 @@
-import React from "react";
+"use client"; // Marque ce fichier comme un composant client
+
+import React, { useEffect, useState } from "react";
 import Image from 'next/image';
-import PicksYourStyle from "../../public/Assets/danse-de-couples-de-dessin-animé-9104839.webp";
-import ChooseHowOften from "../../public/Assets/png-clipart-dance-fashions-warehouse-dance-studio-art-hip-hop-style-dance-studio-cartoon.png";
-import StartDancing from "../../public/Assets/e894525d2d12ed91af895dcdabe95089.jpg";
 import "../CSS/r.css";
 import "../login/login.css";
 import "../register/register.css";
-
+import "../../public/Assets/default-image.jpg";
 
 const Cours = () => {
-  const workInfoData = [
-    {
-      image: PicksYourStyle,
-      title: "SALSA",
-      text: "Par BIAMA DANSE",
-      text: "Prix: 30 Euros"
-    },
-    {
-      image: ChooseHowOften,
-      title: "BREAK DANCE",
-      text: "Par BIAMA DANSE",
-      text: "Prix: 25 Euros"
-    },
-    {
-      image: StartDancing,
-      title: "DANSE CLASSIQUE",
-      text: "Par BIAMA DANSE",
-      text: "Prix: 20 Euros"
-    },
-  ];
+  const [coursData, setCoursData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCours = async () => {
+      try {
+        const response = await fetch('/api/cours');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCoursData(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCours();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
         <h1>Voici les différents cours de danse que nous proposons dans notre association:</h1>
-        <div>
-        </div>
-        <div>
-        </div>
       </div>
       <div className="work-section-bottom">
-        {workInfoData.map((data) => (
-          <div className="work-section-info" key={data.title}>
-            <div className="info-boxes-img-container">
-              <Image src={data.image} alt="" />
+        {Array.isArray(coursData) && coursData.length > 0 ? (
+          coursData.map((cours) => (
+            <div className="work-section-info" key={cours.cours_id}>
+              <div className="info-boxes-img-container">
+                <Image src={"/default-image.jpg"} alt={cours.titre} width={200} height={200} />
+              </div>
+              <h2>{cours.titre}</h2>
+              <p>Par BIAMA DANSE</p>
+              <p>Prix: {cours.prix} Euros</p>
             </div>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div>No courses available</div>
+        )}
       </div>
     </div>
   );
 };
 
 export default Cours;
+
