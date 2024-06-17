@@ -403,7 +403,9 @@ nav {
   }
 }
 
-/*@layer base {  erreur is used but no matching `@tailwind base` directive is present.
+
+  /*@layer base {  erreur is used but no matching `@tailwind base` directive is present.
+
     * {
       @apply border-border;
     }

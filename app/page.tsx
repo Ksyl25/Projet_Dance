@@ -13,7 +13,7 @@ import Work from "./work/page";
 import Testimonial from "./testimonial/page";
 
 
-export default function Index() {
+function Index() {
   return (
     <div className="App">
       <Navbar />
@@ -21,10 +21,8 @@ export default function Index() {
       <About />
       <Work />
       <Testimonial />
-    </div>);
-}
+    </div> )
+	}
 
-
-
-
+export default Index;
 
