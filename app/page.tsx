@@ -21,20 +21,10 @@ export default function Index() {
       <About />
       <Work />
       <Testimonial />
-    </div>
-
-
-
-
-
-import Navbar from "../Components/NavBar";
-function App() {
-	return (
-		<React.Fragment>
-			<Navbar/>
-      <div>Projet Dance </div>
-		</React.Fragment>
-	);
+    </div>);
 }
 
-export default App;
+
+
+
+

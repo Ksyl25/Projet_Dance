@@ -22,18 +22,27 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
 
-    if (response.ok) {
-      alert('Utilisateur créé avec succès!');
-    } else {
-      alert('Erreur lors de la création de l\'utilisateur');
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      console.log('Form submitted with data:', formData);
+
+      if (response.ok) {
+        alert('Utilisateur créé avec succès!');
+      } else {
+        const errorData = await response.json();
+        alert(`Erreur lors de la création de l'utilisateur: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Erreur lors de la requête:', error);
+      alert('Erreur lors de la requête');
     }
   };
 
