@@ -1,4 +1,3 @@
-
 // pages/index.js
 "use client"
 
@@ -13,6 +12,7 @@ import Work from "./work/page";
 import Testimonial from "./testimonial/page";
 
 
+
 function Index() {
   return (
     <div className="App">
@@ -25,4 +25,3 @@ function Index() {
 	}
 
 export default Index;
-
