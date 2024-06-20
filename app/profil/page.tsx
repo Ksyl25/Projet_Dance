@@ -8,19 +8,20 @@ import Link from "next/link";
 
 /*const profil = () => {
   return (
-    <div>profil</div>
+	<div>profil</div>
   )
 }
 
 export default profil*/
 
 import Navbar from "../../Components/NavBar";
-import UserProfile from "../../Components/ProfilUtilisateur";
+//import UserProfile from "../../Components/ProfilUtilisateur";
+import UserProfile from "../profil/ProfilUtilisateur";
 function App() {
 	return (
 		<React.Fragment>
-			<Navbar/>
-            <UserProfile/>
+			<Navbar />
+			<UserProfile />
 		</React.Fragment>
 	);
 }

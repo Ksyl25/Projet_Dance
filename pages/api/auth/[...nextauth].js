@@ -1,4 +1,3 @@
-// pages/api/auth/[...nextauth].js
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaClient } from '@prisma/client';
@@ -22,9 +21,12 @@ export default NextAuth({
         if (user && bcrypt.compareSync(credentials.password, user.mot_de_passe)) {
           return {
             id: user.utilisateur_id,
-            name: `${user.prenom} ${user.nom}`,
+            nom: user.nom,
+            prenom: user.prenom,
             email: user.email,
-            role: user.role
+            role: user.role,
+            date_fin_abonnement: user.date_fin_abonnement,
+            credits: user.credits
           };
         }
 
@@ -39,14 +41,24 @@ export default NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.nom = user.nom;
+        token.prenom = user.prenom;
+        token.email = user.email;
         token.role = user.role;
+        token.date_fin_abonnement = user.date_fin_abonnement;
+        token.credits = user.credits;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        session.id = token.id;
-        session.role = token.role;
+        session.user.id = token.id;
+        session.user.nom = token.nom;
+        session.user.prenom = token.prenom;
+        session.user.email = token.email;
+        session.user.role = token.role;
+        session.user.date_fin_abonnement = token.date_fin_abonnement;
+        session.user.credits = token.credits;
       }
       return session;
     }
