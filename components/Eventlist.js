@@ -1,7 +1,6 @@
 // src/EventList.js
 
 import React from 'react';
-import events from './eventsData';
 //import events from './eventsData'; // 
 import Event from './Event';
 import './EventList.css';
