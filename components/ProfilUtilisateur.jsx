@@ -1,16 +1,35 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
+
 
 const UserProfile = () => {
-  // TODO Informations de base dans l'objet profil
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [profile, setProfile] = useState({
-    nom: 'John Doe',
-    prenom: 'Stephant',
-    creation: '01/02/2023',
-    email: 'john.doe@example.com',
-    nb_entree: '5',
+    nom: '',
+    prenom: '',
+    email: '',
+    nb_entree: '',
   });
 
+  useEffect(() => {
+    if (status === 'authenticated' && session) {
+      setProfile({
+        nom: session.user.nom,
+        prenom: session.user.prenom,
+        email: session.user.email,
+        nb_entree: session.user.credits,
+      });
+    } else if (status === 'unauthenticated') {
+      router.push('/login');
+    }
+  }, [status, session, router]);
+
   const [isEditing, setIsEditing] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProfile((prevProfile) => ({
@@ -19,15 +38,47 @@ const UserProfile = () => {
     }));
   };
 
-
   const toggleEdit = () => {
     setIsEditing((prevEditing) => !prevEditing);
   };
-  const handleSave = () => {
-    // TODO Sauvgarder les changement dans la base de donnée
-    console.log('Profile saved:', profile);
-    toggleEdit();
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch('/api/updateUserProfile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nom: profile.nom,
+          prenom: profile.prenom,
+          email: profile.email,
+        }),
+      });
+
+      if (response.ok) {
+        // Mise à jour réussie
+        const updatedUsers = await response.json();
+        console.log('User profile updated:', updatedUsers);
+        setIsEditing(false); // Fin de l'édition après sauvegarde
+      } else {
+        // Gestion des erreurs
+        console.error('Failed to update user profile');
+        // Afficher un message d'erreur à l'utilisateur si nécessaire
+      }
+    } catch (error) {
+      console.error('Failed to update user profile:', error);
+      // Afficher un message d'erreur à l'utilisateur si nécessaire
+    }
   };
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'unauthenticated') {
+    return <div>Vous devez être connecté pour voir cette page.</div>;
+  }
 
   return (
     <div style={styles.container}>
@@ -76,23 +127,20 @@ const UserProfile = () => {
       </div>
       <div style={styles.babyContainer}>
         <label>Nombre places restantes:</label>
-          <h1>{profile.nb_entree}</h1>
-      </div>
-      <div style={styles.babyContainer}>
-        <label>Date de création:</label>
-          <h1>{profile.creation}</h1>
+        <h1>{profile.nb_entree}</h1>
       </div>
       <button onClick={toggleEdit} style={styles.button}>
-        {isEditing ? 'Cancel' : 'Edit'}
+        {isEditing ? 'Annuler' : 'Modifier'}
       </button>
       {isEditing && (
         <button onClick={handleSave} style={styles.button}>
-          Save
+          Sauvegarder
         </button>
       )}
     </div>
   );
 };
+
 const styles = {
   container: {
     maxWidth: '600px',
@@ -103,7 +151,7 @@ const styles = {
     color: 'white',
     fontFamily: 'Arial, sans-serif',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-    marginTop : '2.5%',
+    marginTop: '2.5%',
   },
   field: {
     marginBottom: '20px',

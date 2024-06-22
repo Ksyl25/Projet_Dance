@@ -1,11 +1,14 @@
 // app/login/page.jsx
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import "../login/login.css";
 import "../CSS/r.css";
 
 const Login = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -31,6 +34,7 @@ const Login = () => {
       alert('Erreur de connexion');
     } else {
       alert('Connexion réussie');
+      router.push('/profil');
     }
   };
 
