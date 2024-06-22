@@ -15,12 +15,18 @@ import Link from "next/link";
 export default profil*/
 
 import Navbar from "../../Components/NavBar";
+<<<<<<< Updated upstream
 import UserProfile from "../../Components/ProfilUtilisateur";
+=======
+>>>>>>> Stashed changes
 function App() {
 	return (
 		<React.Fragment>
 			<Navbar/>
+<<<<<<< Updated upstream
             <UserProfile/>
+=======
+>>>>>>> Stashed changes
 		</React.Fragment>
 	);
 }
