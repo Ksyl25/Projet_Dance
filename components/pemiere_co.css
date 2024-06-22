@@ -1,0 +1,63 @@
+
+.funny-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed orange;
+    border-radius: 15px;
+    background-color: #f2f2ff;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5);
+    width: 300px;
+    margin: 20px auto;
+  }
+  
+  .funny-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .funny-form label {
+    font-size: 1.2em;
+    color: purple;
+    margin-bottom: 10px;
+  }
+  
+  .funny-form input {
+    padding: 10px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: purple;
+  }
+  
+  .funny-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .funny-form button:hover {
+    background-color: purple;
+    color: orange;
+  }
+  
+  .funny-link {
+    margin-top: 10px;
+    color: orange;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .funny-link:hover {
+    color: purple;
+  }
+  

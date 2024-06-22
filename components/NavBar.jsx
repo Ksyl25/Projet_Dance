@@ -23,6 +23,9 @@ function Navbar() {
   const handleSearch = (query) => {
     console.log('Search query:', query);
     // Proposé des résultats ici
+    console.log('Search query:', query); 
+    // Proposé des résultats ici resultats
+	document.location.href="http://localhost:3000/resultats";
   };
 
 	return (
