@@ -19,7 +19,7 @@ export default function page() {
     const handleRegisterClick = () => {
       setShowRegister(true);
       //history.push('/register'); // Navigate to Register page
-      router.push('/register'); // Navigate to the register page
+      router.push('/premiere_conexion'); // Navigate to the register page
     }
 
   return (
@@ -35,7 +35,7 @@ export default function page() {
             DANSER N'A JAMAIS ETE AUSSI SIMPLE.
           </p>
           <button className="secondary-button" onClick={handleRegisterClick}>
-            Commencez Maintenant <FiArrowRight />{" "}
+            Reprenez Maintenant <FiArrowRight />{" "}
           </button>
         </div>
         <div className="home-image-section">

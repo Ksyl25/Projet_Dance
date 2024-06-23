@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { SlMagnifier } from "react-icons/sl";
 
@@ -12,6 +13,11 @@ import "../app/globals.css";
 import Categorie from "./Categorie";
 import SearchBar from "./SearchBar"
 
+<<<<<<< HEAD
+=======
+import "../app/globals.css";
+
+>>>>>>> 6b03ef145b91a3656833af9de4a2f05b9bafc461
 
 function Navbar() {
 	const navRef = useRef();
@@ -21,10 +27,13 @@ function Navbar() {
 			"responsive_nav"
 		);
 	};
+
   const handleSearch = (query) => {
-    console.log('Search query:', query);
-    // Proposé des résultats ici
+    console.log('Search query:', query); 
+    // Proposé des résultats ici resultats
+	document.location.href="http://localhost:3000/resultats";
   };
+
 
 	return (
 		<header>
