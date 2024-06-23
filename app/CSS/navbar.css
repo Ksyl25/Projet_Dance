@@ -1,0 +1,123 @@
+/* Base styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: orange;
+    color: white;
+  }
+  
+  .nav-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links-container {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;  
+  }
+  
+  .nav-link {
+    margin-right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+  }
+  
+  .nav-close-btn {
+    display: none;
+  }
+  
+  .navbar-links-container.responsive_nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    transform: translateY(-5);
+    z-index: 10;
+  }
+  
+  .navbar-links-container.responsive_nav .nav-link {
+    font-size: 18px;
+    margin: 40px 0;
+  }
+  
+  .navbar-links-container.responsive_nav .nav-btn.nav-close-btn {
+    display: block;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar-links-container {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      background-color: orange;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      transform: translateY(-100%);
+      z-index: 10;
+    }
+  
+    .nav-btn.nav-open-btn {
+      display: block;
+    }
+  
+    .navbar-links-container.responsive_nav {
+      transform: translateY(0);
+    }
+  
+    .nav-link {
+      font-size: 18px;
+      margin: 40px 0;
+    }
+  
+    /* Specific styles for Connexion and Inscription */
+    .navbar-links-container.responsive_nav .connexion {
+      margin-top: 60px; /* Adjust as needed */
+    }
+  
+    .navbar-links-container.responsive_nav .inscription {
+      margin-top: 20px; /* Adjust as needed */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 0 10px;
+    }
+  
+    .nav-link {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+  
+    /* Specific styles for Connexion and Inscription */
+    .navbar-links-container.responsive_nav .connexion {
+      margin-top: 100px; /* Adjust as needed */
+    }
+  
+    .navbar-links-container.responsive_nav .inscription {
+      margin-top: 200px; /* Adjust as needed */
+    }
+  }
+  

@@ -149,7 +149,7 @@ const styles = {
     padding: '12px 24px',
     fontSize: '16px',
     cursor: 'pointer',
-    backgroundColor: 'magenta',
+    backgroundColor: 'orange',
     color: 'white',
     border: 'none',
     borderRadius: '4px',

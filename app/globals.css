@@ -360,10 +360,10 @@ nav {
 }
 
 :root {
-	--mainColor: #29335c;
+	--mainColor: white;
 	--mainColorLight: #5767aa;
 	--secondaryColor: #db2b39;
-	--textColor: #eee;
+	--textColor: Orange;
 }
 
 header {

@@ -21,6 +21,9 @@ function Categorie({nom}) {
 		  case 'Boutique':
 			lien = "../shop"
 			break;
+		case 'Finance':
+			lien = "../Finance"
+			break;
 		default:
 			lien = "../test"
 			break;
