@@ -5,7 +5,6 @@ import Image from 'next/image';
 import "../CSS/r.css";
 import "../login/login.css";
 import "../register/register.css";
-import "../../public/Assets/default-image.jpg";
 
 const Cours = () => {
   const [coursData, setCoursData] = useState([]);
@@ -15,7 +14,7 @@ const Cours = () => {
   useEffect(() => {
     const fetchCours = async () => {
       try {
-        const response = await fetch('/api/cours');
+        const response = await fetch('/api/coursapi');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -49,10 +48,14 @@ const Cours = () => {
           coursData.map((cours) => (
             <div className="work-section-info" key={cours.cours_id}>
               <div className="info-boxes-img-container">
-                <Image src={"/default-image.jpg"} alt={cours.titre} width={200} height={200} />
+                <Image
+                  src={cours.image ? `/images/${cours.image}` : "/images/default-image.jpg"}
+                  alt={cours.titre}
+                  width={200}
+                  height={200}
+                />
               </div>
               <h2>{cours.titre}</h2>
-              <p>Par BIAMA DANSE</p>
               <p>Prix: {cours.prix} Euros</p>
             </div>
           ))
@@ -65,4 +68,3 @@ const Cours = () => {
 };
 
 export default Cours;
-

@@ -22,7 +22,7 @@ function Categorie({ nom }) {
 			lien = "../shop"
 			break;
 		case 'évènement':
-			lien = "../cours2"
+			lien = "../cours"
 			break;
 
 		default:
