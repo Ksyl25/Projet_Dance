@@ -404,7 +404,7 @@ nav {
 }
 
 
-  /*@layer base {  erreur is used but no matching `@tailwind base` directive is present.
+/*@layer base {  erreur is used but no matching `@tailwind base` directive is present.
 
     * {
       @apply border-border;
@@ -424,17 +424,10 @@ nav {
 }
 
 :root {
-<<<<<<< HEAD
-	--mainColor: white;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
-	--textColor: Orange;
-=======
-  --mainColor: #29335c;
+  --mainColor: white;
   --mainColorLight: #5767aa;
   --secondaryColor: #db2b39;
-  --textColor: #eee;
->>>>>>> 6b03ef145b91a3656833af9de4a2f05b9bafc461
+  --textColor: Orange;
 }
 
 header {
