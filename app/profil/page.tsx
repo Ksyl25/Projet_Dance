@@ -5,15 +5,6 @@ import React from "react";
 import Link from "next/link";
 
 
-
-/*const profil = () => {
-  return (
-	<div>profil</div>
-  )
-}
-
-export default profil*/
-
 import Navbar from "../../Components/NavBar";
 //import UserProfile from "../../Components/ProfilUtilisateur";
 import UserProfile from "../profil/ProfilUtilisateur";

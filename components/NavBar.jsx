@@ -20,22 +20,22 @@ function Navbar() {
 			"responsive_nav"
 		);
 	};
-  const handleSearch = (query) => {
-    console.log('Search query:', query);
-    // Proposé des résultats ici
-  };
+	const handleSearch = (query) => {
+		console.log('Search query:', query);
+		// Proposé des résultats ici
+	};
 
 	return (
 		<header>
 			<h3>LOGO</h3>
 			<nav ref={navRef}>
-				<Categorie nom ="Profil" />
-				<Categorie nom ="Creation" />
-				<Categorie nom ="Boutique" />
-				<Categorie nom ="autre" />
-      
-        <SearchBar onSearch={handleSearch} />
-        
+				<Categorie nom="Profil" />
+				<Categorie nom="Creation" />
+				<Categorie nom="Boutique" />
+				<Categorie nom="évènement" />
+
+				<SearchBar onSearch={handleSearch} />
+
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
