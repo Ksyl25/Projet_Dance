@@ -424,10 +424,17 @@ nav {
 }
 
 :root {
+<<<<<<< HEAD
+	--mainColor: white;
+	--mainColorLight: #5767aa;
+	--secondaryColor: #db2b39;
+	--textColor: Orange;
+=======
   --mainColor: #29335c;
   --mainColorLight: #5767aa;
   --secondaryColor: #db2b39;
   --textColor: #eee;
+>>>>>>> 6b03ef145b91a3656833af9de4a2f05b9bafc461
 }
 
 header {

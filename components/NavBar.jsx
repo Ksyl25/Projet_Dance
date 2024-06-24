@@ -4,13 +4,15 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { SlMagnifier } from "react-icons/sl";
 
-
+import Logo from "../public/Assets/Logo.svg";
 import "../app/globals.css";
 import Categorie from "./Categorie";
 import SearchBar from "./SearchBar"
+
 
 function Navbar() {
 	const navRef = useRef();
@@ -25,9 +27,11 @@ function Navbar() {
 		// Proposé des résultats ici
 	};
 
+
 	return (
 		<header>
-			<h3>LOGO</h3>
+			<div className="nav-logo-container"></div>
+			<Image src={Logo} alt="Logo" width={200} height={100} />
 			<nav ref={navRef}>
 				<Categorie nom="Profil" />
 				<Categorie nom="Creation" />

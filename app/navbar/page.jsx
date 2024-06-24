@@ -7,6 +7,7 @@ import Logo from '../../public/Assets/Logo.svg'; // Ensure the path is correct
 import "../CSS/r.css";
 import "../login/login.css";
 import "../register/register.css";
+import "../CSS/navbar.css";
 
 const Navbar = () => {
   const router = useRouter();
