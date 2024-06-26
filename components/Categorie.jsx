@@ -6,29 +6,33 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../app/globals.css";
 
-function Categorie({nom}) {
+function Categorie({ nom }) {
 	let lien = "";
 	switch (nom) {
 		case 'Profil':
-		  lien = "../profil"
-		  break;
+			lien = "../profil"
+			break;
 		case 'Mes Cours':
 			lien = "../cours"
 			break;
 		case 'Creation':
-		  lien = "../creation"
-		  break;
-		  case 'Boutique':
+			lien = "../creation"
+			break;
+		case 'Boutique':
 			lien = "../shop"
 			break;
+		case 'évènement':
+			lien = "../cours"
+			break;
+
 		default:
 			lien = "../test"
 			break;
-	  }
+	}
 	return (
-		
+
 		<div >
-			<a href= {lien} >{nom}</a>
+			<a href={lien} >{nom}</a>
 		</div>
 	);
 }

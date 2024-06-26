@@ -25,7 +25,8 @@ export default function page() {
   return (
     <div className="home-container">
       <div className="home-banner-container">
-        
+        <div className="home-bannerImage-container">
+        </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
             VOTRE ASSOCIATION DE DANSE A VOTRE DISPOSITION. 

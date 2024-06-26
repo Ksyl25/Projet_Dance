@@ -3,6 +3,7 @@
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
+import EventList from '../../components/EventList';
 
 
 const UserProfile = () => {
@@ -148,7 +149,9 @@ const UserProfile = () => {
                     Sauvegarder
                 </button>
             )}
+
         </div>
+
     );
 };
 

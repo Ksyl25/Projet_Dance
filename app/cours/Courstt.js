@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 import PicksYourStyle from "../../public/Assets/danse-de-couples-de-dessin-animé-9104839.webp";
 import ChooseHowOften from "../../public/Assets/png-clipart-dance-fashions-warehouse-dance-studio-art-hip-hop-style-dance-studio-cartoon.png";
@@ -43,27 +43,9 @@ const Cours = () => {
         console.error('There was an error fetching the cours data!', error);
       });
   }, []);
-  
 
-  return (
-    <div className="work-section-wrapper">
-      <div className="work-section-top">
-      </div>
-      <div className="work-section-bottom">
-      {cours.map((data) => (
-  <div className="work-section-info" key={data.cours_id}>
-    <div className="info-boxes-img-container">
-      <Image src={data.image} alt={data.titre} layout="responsive" width={500} height={500} />
-    </div>
-    <h2>{data.titre}</h2>
-    <p>Par {data.type}</p>
-    <p>Prix: {data.prix} Euros</p>
-  </div>
-))}
 
-      </div>
-    </div>
-  );
+
 };
 
 export default Cours;

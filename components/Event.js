@@ -2,11 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import fond_event1 from '../public/Assets/event1.jpg';
-import fond_event2 from '../public/Assets/event2.jpg';
-import fond_event3 from '../public/Assets/event3.jpg';
-import fond_event4 from '../public/Assets/event_danse1.jpg';
-import fond_event5 from '../public/Assets/event_danse2.jpg';
-import fond_event6 from '../public/Assets/event_danse3.jpg';
+
 
 const Event = ({ name, organiser, price, place, type , action}) => {
   let vigniette=fond_event1;
@@ -68,7 +64,7 @@ const Event = ({ name, organiser, price, place, type , action}) => {
     <div className="event-card">
       <div>
         <h2>{name}</h2>
-        <Image className='image-vigniette' src={vigniette}/>
+        <Image className='image-vigniette' src={vigniette} />
       </div>
 
       <p><strong>Organisateur:</strong> {organiser}</p>
