@@ -6,13 +6,13 @@ import Link from "next/link";
 
 import Navbar from "../../Components/NavBar";
 
-import UserProfile from "../../Components/ProfilUtilisateur";
+import CreateProfessorForm from "../../Components/CreateProfessorForm";
 
 function App() {
 	return (
 		<React.Fragment>
 			<Navbar />
-			<UserProfile />
+			<CreateProfessorForm />
 		</React.Fragment>
 	);
 }

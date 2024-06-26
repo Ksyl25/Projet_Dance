@@ -12,6 +12,9 @@ function Categorie({ nom }) {
 		case 'Profil':
 			lien = "../profil"
 			break;
+			case 'CreerProfesseur':
+				lien = "../professeur"
+				break;
 		case 'Mes Cours':
 			lien = "../cours"
 			break;
@@ -24,6 +27,11 @@ function Categorie({ nom }) {
 		case 'évènement':
 			lien = "../cours"
 			break;
+			case 'Finance':
+				lien = "../Finance"
+				break;
+				
+
 
 		default:
 			lien = "../test"
