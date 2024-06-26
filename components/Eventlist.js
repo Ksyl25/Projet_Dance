@@ -44,6 +44,7 @@ const EventList = () => {
           price={event.price}
           place={event.place}
           type={event.type}
+          action={event.action}
         />
       ))}
     </div>

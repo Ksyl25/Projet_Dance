@@ -8,7 +8,7 @@ import fond_event4 from '../public/Assets/event_danse1.jpg';
 import fond_event5 from '../public/Assets/event_danse2.jpg';
 import fond_event6 from '../public/Assets/event_danse3.jpg';
 
-const Event = ({ name, organiser, price, place, type }) => {
+const Event = ({ name, organiser, price, place, type , action}) => {
   let vigniette=fond_event1;
   switch(Math.floor(Math.random() * (6 - 1 + 1)) + 1 ) {
     case 1:
@@ -31,7 +31,39 @@ const Event = ({ name, organiser, price, place, type }) => {
         break;
     default:
       vigniette=fond_event1;
-}
+      break;
+
+  }
+      let bouton = "";
+      switch(action ) {
+        case 'inscription':
+          bouton = "<button class='validation-button'>Insctiption</button>";
+            break;
+        case 'annulation':
+          bouton = "<button class='cancel-button'>Annulation</button>";
+            break;
+        case 'desinscription':
+          bouton = "<button class='unsubscribe-button'>Unsubscribe</button>";
+            break;
+        default:
+          switch(Math.floor(Math.random() * ((3 - 1) + 1)) + 1 ){
+            case 1:
+              bouton = "<button class='validation-button'>Insctiption</button>";
+              break;  
+            case 2:
+              bouton = "<button class='unsubscribe-button'>Unsubscribe</button>";
+              break;
+            case 3:
+              bouton = "<button class='cancel-button'>Annulation</button>";
+              break;
+            default:
+              bouton = "<button class='validation-button'>Insctiption</button>";
+            break;
+            
+          }
+        }
+
+
   return (
     <div className="event-card">
       <div>
@@ -43,7 +75,10 @@ const Event = ({ name, organiser, price, place, type }) => {
       <p><strong>Prix :</strong> {price} €</p>
       <p><strong>Lieux :</strong> {place}</p>
       <p><strong>Type :</strong> {type}</p>
+      {bouton}
+
     </div>
+
   );
 };
 
