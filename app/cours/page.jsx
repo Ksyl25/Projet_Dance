@@ -5,6 +5,7 @@ import Image from 'next/image';
 import "../CSS/r.css";
 import "../login/login.css";
 import "../register/register.css";
+import Navbar from "../../Components/NavBar";
 
 const Cours = () => {
   const [coursData, setCoursData] = useState([]);
@@ -39,29 +40,34 @@ const Cours = () => {
   }
 
   return (
-    <div className="work-section-wrapper">
-      <div className="work-section-top">
-        <h1>Voici les différents cours de danse que nous proposons dans notre association:</h1>
-      </div>
-      <div className="work-section-bottom">
-        {Array.isArray(coursData) && coursData.length > 0 ? (
-          coursData.map((cours) => (
-            <div className="work-section-info" key={cours.cours_id}>
-              <div className="info-boxes-img-container">
-                <Image
-                  src={cours.image ? `/images/${cours.image}` : "/images/default-image.jpg"}
-                  alt={cours.titre}
-                  width={200}
-                  height={200}
-                />
+    <div>
+      {console.log('Tous les cours:', coursData)}
+
+      <Navbar />
+      <div className="work-section-wrapper">
+        <div className="work-section-top">
+          <h1> Nos cours : </h1>
+        </div>
+        <div className="work-section-bottom">
+          {Array.isArray(coursData) && coursData.length > 0 ? (
+            coursData.map((cours) => (
+              <div className="work-section-info" key={cours.cours_id}>
+                <div className="info-boxes-img-container">
+                  <img
+                    src={cours.image ? `${cours.image}` : "/images/default-image.jpg"}
+                    alt="Uploaded"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <h2>{cours.titre}</h2>
+                <p>Prix: {cours.prix} Euros</p>
               </div>
-              <h2>{cours.titre}</h2>
-              <p>Prix: {cours.prix} Euros</p>
-            </div>
-          ))
-        ) : (
-          <div>No courses available</div>
-        )}
+            ))
+          ) : (
+            <div>No courses available</div>
+          )}
+        </div>
       </div>
     </div>
   );

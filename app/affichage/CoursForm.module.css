@@ -1,0 +1,134 @@
+/* CoursForm.module.css */
+
+.coursForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.coursForm div {
+    display: flex;
+    flex-direction: column;
+}
+
+.coursForm label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.coursForm input,
+.coursForm select,
+.coursForm button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.coursForm button {
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+}
+
+.coursForm button:hover {
+    background-color: #005bb5;
+}
+
+.basic-multi-select {
+    margin-top: 0.5rem;
+}
+
+/* Styles personnalisés pour le calendrier react-datepicker */
+
+.react-datepicker {
+    font-family: 'Arial, sans-serif';
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    /* Ajuster la largeur automatique */
+}
+
+.react-datepicker__header {
+    background-color: #0070f3;
+    color: white;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+    padding: 8px 0;
+}
+
+.react-datepicker__current-month {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+    background-color: #0070f3;
+    color: white;
+    border-radius: 50%;
+}
+
+.react-datepicker__day--today {
+    border: 2px solid #0070f3;
+    border-radius: 50%;
+}
+
+.react-datepicker__day {
+    font-size: 14px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.2rem;
+    border-radius: 4px;
+}
+
+.react-datepicker__day-name {
+    font-size: 12px;
+    margin: 0.2rem;
+}
+
+.react-datepicker__day:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+}
+
+.react-datepicker__month-container {
+    padding: 16px;
+}
+
+/* Boutons de navigation */
+.react-datepicker__navigation {
+    top: 10px;
+    /* Ajuste la position verticale des boutons */
+    width: 15px;
+    /* Taille réduite */
+    height: 15px;
+    /* Taille réduite */
+    border: none;
+    background-color: transparent;
+}
+
+.react-datepicker__navigation--previous {
+    left: 10px;
+    /* Ajuste la position horizontale du bouton précédent */
+}
+
+.react-datepicker__navigation--next {
+    right: 10px;
+    /* Ajuste la position horizontale du bouton suivant */
+}
+
+.react-datepicker__navigation-icon::before {
+    border-color: #0070f3;
+}

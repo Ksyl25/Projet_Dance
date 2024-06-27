@@ -8,107 +8,109 @@ generator client {
 }
 
 model Utilisateur {
-  utilisateur_id      Int        @id @default(autoincrement())
-  role                Role
-  prenom              String
-  nom                 String
-  email               String     @unique
-  mot_de_passe        String
-  photo               String?
-  description         String?
-  credits             Int        @default(0)
+  utilisateur_id        Int               @id @default(autoincrement())
+  role                  Role
+  prenom                String
+  nom                   String
+  email                 String            @unique
+  mot_de_passe          String
+  photo                 String?
+  description           String?
+  credits               Int               @default(0)
   date_debut_abonnement DateTime?
-  date_fin_abonnement DateTime?
-  cree_a              DateTime   @default(now())
-  mis_a_jour_a        DateTime   @updatedAt
-  CoursProfesseur     CoursProfesseur[]
-  Participation       Participation[]
-  Abonnement          Abonnement[]
-  Paiement            Paiement[]
+  date_fin_abonnement   DateTime?
+  cree_a                DateTime          @default(now())
+  mis_a_jour_a          DateTime          @updatedAt
+  CoursProfesseur       CoursProfesseur[]
+  Participation         Participation[]
+  Abonnement            Abonnement[]
+  Paiement              Paiement[]
 }
 
 model Cours {
-  cours_id            Int             @id @default(autoincrement())
-  titre               String
-  type                String?
-  date_heure_debut    DateTime
-  duree               Int
-  recurrence          String?
-  image               String?
-  cree_a              DateTime        @default(now())
-  mis_a_jour_a        DateTime        @updatedAt
-  prix                Float
-  CoursProfesseur     CoursProfesseur[]
-  Participation       Participation[]
-  Paiement            Paiement[]
-  Lien                Lien[]
-  MappingTagCours     MappingTagCours[]
-  MediaCours          MediaCours[]
+  cours_id        Int               @id @default(autoincrement())
+  titre           String
+  type            String?
+  heure           String?
+  duree           Int
+  recurrence      String?
+  image           String?
+  cree_a          DateTime          @default(now())
+  mis_a_jour_a    DateTime          @updatedAt
+  dates           Json?
+  prix            Float
+  format_paiement String?
+  CoursProfesseur CoursProfesseur[]
+  Participation   Participation[]
+  Paiement        Paiement[]
+  Lien            Lien[]
+  MappingTagCours MappingTagCours[]
+  MediaCours      MediaCours[]
 }
 
 model CoursProfesseur {
-  cours_id        Int
-  professeur_id   Int
-  Cours           Cours         @relation(fields: [cours_id], references: [cours_id])
-  Utilisateur     Utilisateur   @relation(fields: [professeur_id], references: [utilisateur_id])
+  cours_id      Int
+  professeur_id Int
+  Cours         Cours       @relation(fields: [cours_id], references: [cours_id])
+  Utilisateur   Utilisateur @relation(fields: [professeur_id], references: [utilisateur_id])
 
   @@id([cours_id, professeur_id])
 }
 
 model Participation {
-  participation_id   Int          @id @default(autoincrement())
-  cours_id           Int
-  utilisateur_id     Int
-  methode_paiement   MethodePaiement
-  statut_paiement    StatutPaiement
-  cree_a             DateTime     @default(now())
-  Cours              Cours        @relation(fields: [cours_id], references: [cours_id])
-  Utilisateur        Utilisateur  @relation(fields: [utilisateur_id], references: [utilisateur_id])
+  participation_id Int             @id @default(autoincrement())
+  cours_id         Int
+  utilisateur_id   Int
+  methode_paiement MethodePaiement
+  statut_paiement  StatutPaiement
+  cree_a           DateTime        @default(now())
+  Cours            Cours           @relation(fields: [cours_id], references: [cours_id])
+  Utilisateur      Utilisateur     @relation(fields: [utilisateur_id], references: [utilisateur_id])
 }
 
 model Abonnement {
-  abonnement_id      Int        @id @default(autoincrement())
-  utilisateur_id     Int
-  type               AbonnementType
-  date_debut         DateTime
-  date_fin           DateTime
-  cours_restants     Int?
-  cree_a             DateTime   @default(now())
-  mis_a_jour_a       DateTime   @updatedAt
-  Utilisateur        Utilisateur @relation(fields: [utilisateur_id], references: [utilisateur_id])
+  abonnement_id  Int            @id @default(autoincrement())
+  utilisateur_id Int
+  type           AbonnementType
+  date_debut     DateTime
+  date_fin       DateTime
+  cours_restants Int?
+  cree_a         DateTime       @default(now())
+  mis_a_jour_a   DateTime       @updatedAt
+  Utilisateur    Utilisateur    @relation(fields: [utilisateur_id], references: [utilisateur_id])
 }
 
 model Paiement {
-  paiement_id      Int          @id @default(autoincrement())
+  paiement_id      Int             @id @default(autoincrement())
   utilisateur_id   Int
   cours_id         Int
   montant          Float
   methode_paiement MethodePaiement
-  date_paiement    DateTime     @default(now())
-  Utilisateur      Utilisateur  @relation(fields: [utilisateur_id], references: [utilisateur_id])
-  Cours            Cours        @relation(fields: [cours_id], references: [cours_id])
+  date_paiement    DateTime        @default(now())
+  Utilisateur      Utilisateur     @relation(fields: [utilisateur_id], references: [utilisateur_id])
+  Cours            Cours           @relation(fields: [cours_id], references: [cours_id])
 }
 
 model Lien {
-  lien_id     Int        @id @default(autoincrement())
+  lien_id     Int     @id @default(autoincrement())
   cours_id    Int
   url         String
   description String?
-  Cours       Cours      @relation(fields: [cours_id], references: [cours_id])
+  Cours       Cours   @relation(fields: [cours_id], references: [cours_id])
 }
 
 model TagCours {
-  tag_id    Int       @id @default(autoincrement())
-  nom       String
+  tag_id          Int               @id @default(autoincrement())
+  nom             String
   MappingTagCours MappingTagCours[]
 }
 
 model MappingTagCours {
-  mapping_id Int       @id @default(autoincrement())
+  mapping_id Int      @id @default(autoincrement())
   cours_id   Int
   tag_id     Int
-  Cours      Cours     @relation(fields: [cours_id], references: [cours_id])
-  TagCours   TagCours  @relation(fields: [tag_id], references: [tag_id])
+  Cours      Cours    @relation(fields: [cours_id], references: [cours_id])
+  TagCours   TagCours @relation(fields: [tag_id], references: [tag_id])
 }
 
 model MediaCours {
@@ -120,17 +122,17 @@ model MediaCours {
 }
 
 model TypeCarte {
-  type_carte_id Int    @id @default(autoincrement())
+  type_carte_id Int     @id @default(autoincrement())
   nom           String
   description   String?
   nb_places     Int
 }
 
 model Caisse {
-  caisse_id         Int       @id @default(autoincrement())
-  montant           Float
-  description       String
-  date_transaction  DateTime  @default(now())
+  caisse_id        Int      @id @default(autoincrement())
+  montant          Float
+  description      String
+  date_transaction DateTime @default(now())
 }
 
 enum Role {

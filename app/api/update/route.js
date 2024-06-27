@@ -9,9 +9,6 @@ export async function POST(req) {
     console.log('Données reçues :', body);
 
     try {
-
-
-
         // Vérifiez que toutes les données requises sont présentes
         if (!body.email || !body.nom || !body.prenom) {
             return new Response(JSON.stringify({ message: 'Données incomplètes' }), {
